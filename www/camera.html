@@ -23,8 +23,8 @@ jQuery.support.cors = true;
       <input class="step-no" name="her_pair" id="her_pair" maxlength="15" type="text" placeholder="ENTER HERPAIR NO."/>
 
         <input class="submitbtn" type="submit" onClick="scan();" value="SCAN BAR CODE"/>
-<script type="text/javascript" src="js/qr_packed.js"></script>
-		
+<script type="text/javascript" src="js/barcodescanner.js"></script>
+<script type="text/javascript" src="js/cordova.js"></script>	
 <script>
 function scan()
 {		
@@ -41,7 +41,7 @@ function scan()
 			  alert("Scanning failed: " + error);
 		  }
 	   );
-);   
+}
 </script>
    
 </body>
