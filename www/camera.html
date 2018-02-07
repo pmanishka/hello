@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scanner demo</title>
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery.min.js"></script>
+        <style type="text/css">
+      body, input {font-size:14pt}
+input, label {vertical-align:middle}
+.qrcode-text-btn {display:inline-block; background:url(images/1499401426qr_icon.svg) 50% 50% no-repeat; height:1em; width:1.7em; margin-left:-1.7em; cursor:pointer}
+.qrcode-text-btn > input[type=file] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0}
+        </style>
+		
+<script>
+var contentType ="application/x-www-form-urlencoded; charset=utf-8";
+if(window.XDomainRequest){contentType = "text/plain";}
+jQuery.support.cors = true;
+</script>
+    </head>
+	
+	
+    <body>
+      <input class="step-no" name="her_pair" id="her_pair" maxlength="15" type="text" placeholder="ENTER HERPAIR NO."/>
+
+        <input class="submitbtn" type="submit" onClick="scan();" value="SCAN BAR CODE"/>
+<script type="text/javascript" src="js/qr_packed.js"></script>
+		
+<script>
+function scan()
+{		
+	var scanner = cordova.require("com.phonegap.plugins.barcodescanner.barcodescanner");
+
+	   scanner.scan(
+		  function (result) {
+			  alert("We got a barcode\n" +
+					"Result: " + result.text + "\n" +
+					"Format: " + result.format + "\n" +
+					"Cancelled: " + result.cancelled);
+		  }, 
+		  function (error) {
+			  alert("Scanning failed: " + error);
+		  }
+	   );
+);   
+</script>
+   
+</body>
+</html>
